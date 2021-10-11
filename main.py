@@ -54,13 +54,14 @@ class MyTransform(object):
 
 # Argument parser
 parser = argparse.ArgumentParser(description='pi_GNN')
-parser.add_argument('--dataset', default='MUTAG', help='Dataset name')
+parser.add_argument('--dataset', default='ENZYMES', help='Dataset name')
 parser.add_argument('--lr', type=float, default=1e-3, metavar='LR', help='Initial learning rate')
 parser.add_argument('--dropout', type=float, default=0.0, help='Dropout rate')
 parser.add_argument('--batch-size', type=int, default=64, metavar='N', help='Batch size')
 parser.add_argument('--epochs', type=int, default=300, metavar='N', help='Number of epochs to train')
 parser.add_argument('--hidden-nodes', type=int, default=20, metavar='N', help='Number of latent nodes')
 parser.add_argument('--hidden-dim', type=int, default=64, metavar='N', help='Size of hidden layer')
+parser.add_argument('--alpha', type=float, default=0.5, help='Trade-off between structural features and node attributes')
 parser.add_argument('--use-dustbins', action='store_true', default=False, help='Whether to use dustbins')
 args = parser.parse_args()
 
@@ -114,7 +115,7 @@ def test(loader):
 
 acc = []
 for i in range(10):
-    model = pi_GNN(dataset.num_features, args.hidden_dim, n_max, args.hidden_nodes, args.use_dustbins, args.dropout, dataset.num_classes).to(device)
+    model = pi_GNN(dataset.num_features, args.hidden_dim, n_max, args.hidden_nodes, args.alpha, args.use_dustbins, args.dropout, dataset.num_classes).to(device)
     optimizer = torch.optim.Adam(model.parameters(), lr=args.lr)
 
     train_index = splits[i]['model_selection'][0]['train']
