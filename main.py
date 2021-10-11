@@ -6,7 +6,7 @@ import torch
 import torch.nn.functional as F
 from torch import optim
 
-from torch_geometric.data import DataLoader
+from torch_geometric.loader import DataLoader
 import torch_geometric.transforms as T
 from torch_geometric.datasets import TUDataset
 from torch_geometric.utils import to_networkx
