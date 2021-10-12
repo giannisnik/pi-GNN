@@ -1,5 +1,5 @@
 '''
-The log_sinkhorn_iterations() and log_optimal_transport() are modified from https://github.com/magicleap/SuperGluePretrainedNetwork/blob/master/models/superglue.py
+The log_sinkhorn_iterations() and log_optimal_transport() functions are modified from https://github.com/magicleap/SuperGluePretrainedNetwork/blob/master/models/superglue.py
 '''
 import torch
 import torch.nn as nn
@@ -124,13 +124,16 @@ class pi_GNN(nn.Module):
 
         adj_aligned = self.ln1(adj_aligned)
         out_adj = self.relu(self.fc3(adj_aligned))
+        out_adj = self.dropout(out_adj)
         out_adj = self.relu(self.fc4(out_adj))
 
         feats_aligned = self.ln2(feats_aligned)
         out_feats = self.relu(self.fc5(feats_aligned))
+        out_feats = self.dropout(out_feats)
         out_feats = self.relu(self.fc6(out_feats))
 
         out = torch.cat([out_adj, out_feats], dim=1)
         out = self.relu(self.fc7(out))
+        out = self.dropout(out)
         out = self.fc8(out)
         return F.log_softmax(out, dim=1)
