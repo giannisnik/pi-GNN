@@ -1,5 +1,5 @@
 ## Permute Me Softly: Learning Soft Permutations for Graph Representations
-Code for the paper [Permute Me Softly: Learning Soft Permutations for Graph Representations]([https://arxiv.org/pdf/2110.01872.pdf](https://ieeexplore.ieee.org/abstract/document/9816105?casa_token=YX93LtSnu2gAAAAA:sglYbaFFpGH9B_92IIfDJUQj-LNEiW6HDBRGIvqYFN2dpJqAz7rYxuVutbEjj1Ne6tKrvtkUCQ)).
+Code for the paper [Permute Me Softly: Learning Soft Permutations for Graph Representations]([https://ieeexplore.ieee.org/abstract/document/9816105?casa_token=YX93LtSnu2gAAAAA:sglYbaFFpGH9B_92IIfDJUQj-LNEiW6HDBRGIvqYFN2dpJqAz7rYxuVutbEjj1Ne6tKrvtkUCQ]).
 
 ### Requirements
 Code is written in Python 3.7 and requires:
