@@ -21,7 +21,10 @@ Please cite our paper if you use this code:
   title={Permute me softly: learning soft permutations for graph representations},
   author={Nikolentzos, Giannis and Dasoulas, George and Vazirgiannis, Michalis},
   journal={IEEE Transactions on Pattern Analysis and Machine Intelligence},
-  year={2022},
+  volume={45},
+  number={4},
+  pages={5087--5098},
+  year={2023},
   publisher={IEEE}
 }
 ```
