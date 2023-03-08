@@ -17,7 +17,7 @@ python main.py
 ### Cite
 Please cite our paper if you use this code:
 ```
-@article{nikolentzos2022permute,
+@article{nikolentzos2023permute,
   title={Permute me softly: learning soft permutations for graph representations},
   author={Nikolentzos, Giannis and Dasoulas, George and Vazirgiannis, Michalis},
   journal={IEEE Transactions on Pattern Analysis and Machine Intelligence},
